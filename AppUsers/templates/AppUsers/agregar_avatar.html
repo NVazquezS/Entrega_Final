@@ -1,0 +1,24 @@
+{% extends 'Airsoft/base.html' %}
+
+{% block contenido %}
+<br>
+
+<h1>Agregar Avatar</h1>
+<br>
+{% if errors %}
+    <p style="color: red;"> {{errors}} </p>
+{% endif %}
+<form action="" method="post" enctype="multipart/form-data">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <input type="submit" value="Guardar">
+
+</form>
+
+
+
+
+{% endblock %}

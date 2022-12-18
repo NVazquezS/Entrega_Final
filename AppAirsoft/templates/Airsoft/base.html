@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title> Mundo Airsoft</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'Airsoft/css/styles.css' %}" rel="stylesheet" />
+        <link href="{% static 'Airsoft/css/estilos.css' %}"rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav>
+            <div class="container">
+                <div class="btn-menu">
+                    <label for="btn-menu">☰</label>
+                </div>
+                    <div class="logo">
+                        <h2><span>MUNDO</span>AIRSOFT<span>.</span></h2>
+                    </div>
+                    <nav class="menu">
+                        <a href="{% url 'AppAirsoft-inicio' %}">Inicio</a>
+                        <a href="{% url 'AppAirsoft-nosotros' %}">Nosotros</a>
+                        <a href="{% url 'AppUsers-mensajes' %}">Foro</a>
+                        {% if request.user.is_authenticated %}
+                        <a href="{% url 'AppUsers-mostrar-perfil' %}">{{request.user.username}}</a>
+                        <img src=" {{imagen_url}} " style="width: 40px;">
+                        <a class="btn btn-primary" href="{% url 'AppUsers-logout' %}">Logout</a>
+                            
+                        {% else %}
+                        <a class="btn btn-primary" href="{% url 'AppUsers-iniciar-sesion' %}">Login</a>
+                            
+                        {% endif %}                                                  
+                        
+                    </nav>
+                </div>
+            </header>
+            <div class="capa"></div>
+        <!--	--------------->
+        <input type="checkbox" id="btn-menu">
+        <div class="container-menu">
+            <div class="cont-menu">
+                <nav>
+                    <a href="{% url 'AppAirsoft-replica' %}">Replicas</a>
+                    <a href="{% url 'AppAirsoft-equipamiento' %}">Equipamiento</a>
+                    <a href="{% url 'AppAirsoft-promos' %}">Promos</a>
+                </nav>
+                <label for="btn-menu">✖️</label>
+            </div>
+        </div>
+        </nav>
+        <script src="js/scripts.js"></script>    
+        <!-- Masthead-->
+        <header class="logo">
+            <div class="container">
+                <div class="masthead-subheading">
+                    
+                    <h1></h1>
+                </div>
+            </div>
+        </header>
+
+        {% block contenido %}
+
+
+
+        {% endblock %}
+        <footer>
+            <div class="footer-container">
+                <div class="footer-content-container">
+                    <h3 class="website-logo">Airsoft Academy</h3>
+                    
+                    <span class="footer-info">airsoft@gmail.com</span>
+                </div>
+                <div class="footer-menus">
+                    <div class="footer-content-container">
+                        <a href="" class="menu-item-footer">HOME</a>
+                    </div>
+                    <div class="footer-content-container">
+                        <span class="menu-title">INFO</span>
+                        <a href="{% url 'AppAirsoft-nosotros' %}" class="menu-item-footer">Nosotros</a>
+                        <br>
+                    <div class="footer-content-container">
+                        <a href="" class="menu-item-footer">CONTACTO</a>
+                        <span class="footer-info">111 111 111</span>
+                        <span class="footer-info">info@mundoairsoft.com</span>
+                    </div>    
+                    </div>
+                </div>
+                
+                <div class="footer-content-container">
+                    <div class="social-container">
+                        <a href="" class="social-link"></a>
+                        <a href="" class="social-link"></a>
+                        <a href="" class="social-link"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-container">
+                <span class="copyright">Copyright 2022, mundoairsoft.com. All rights reserved.</span>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    </body>
+</html>

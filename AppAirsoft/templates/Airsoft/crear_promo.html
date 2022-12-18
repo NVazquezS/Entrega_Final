@@ -1,0 +1,20 @@
+{% extends 'Airsoft/base.html' %}
+{% block contenido %}
+<br>
+<br>
+<br>
+{% if errores %}
+    <p style="color: red "> {{errores}} </p>
+{% endif %}
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ formulario.as_p }}
+    <input type="submit" value="Crear Promo" >
+</form>
+
+<br>
+
+<br>
+
+{% endblock %}

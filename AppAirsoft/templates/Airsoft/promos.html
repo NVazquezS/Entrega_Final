@@ -1,0 +1,35 @@
+{% extends 'Airsoft/base.html' %}
+{% block contenido %}
+<br>
+<h1>PROMOS</h1>
+<br>
+
+{% if promos %}
+    <ul>
+    {% for promo in promos %}
+        
+    <img src="{{ promo.imagen.url }}"style="width: 150px;">
+<br>
+
+    <p> {{ promo.nombre_promo }} </p>
+    <p> ${{ promo.precio }} </p>
+        {% if request.user.is_superuser %}
+    <p><button><a href="{% url 'AppAirsoft-promo-edit' promo.id %}">Editar</a></button></p>&nbsp;&nbsp;<button><a href="{% url 'AppAirsoft-promo-borrar' promo.id %}">Eliminar</a></button>
+        {% endif %}
+    <br>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p> No Hay promos disponibles de momento</p>
+{% endif %}
+<br>
+<br>
+{% if request.user.is_superuser %}
+    <button><a href="{% url 'AppAirsoft-promos-create' %}">Agregar Promo</a></button>
+{% endif %}
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
+

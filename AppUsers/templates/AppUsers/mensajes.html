@@ -1,0 +1,22 @@
+{% extends 'Airsoft/base.html' %}
+{% block contenido %}
+<br>
+<h1>MENSAJES</h1>
+<br>
+
+
+{% for post in posts %}
+
+<p> {{ post.user.username }} </p>
+<p> {{ post.content }} </p>
+<p> {{ post.timestamp }} </p>
+<br>
+{% endfor %}
+<br>
+<form action="" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+
+<button type="submit">Post</button>
+</form>
+{% endblock %}

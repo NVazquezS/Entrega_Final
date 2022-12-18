@@ -1,0 +1,20 @@
+{% extends 'Airsoft/base.html' %}
+{% block contenido %}
+
+<h1>CREAR USUARIO</h1>
+{% if errors %}
+    <p style="color: red">Errores en el registro: {{errors}} </p>
+{% endif %}
+
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit" value="Crear Usuario">
+</form>
+<br>
+
+
+
+{% endblock %}
