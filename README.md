@@ -21,7 +21,7 @@ Nicolás Vázquez Sanjurjo:
 .Funciones de Registro(Signup), Login, Edición de Perfil, Avatar, Logout.
 .Validación de usuarios.
 .Mostrar perfil
-.Creación superuser (user=admin, pass=)
+.Creación superuser
 .Creación de Templates para mostrar la info detallada arriba
 .Vista de mensajes entre usuarios, siguiendo el formato de posts individuales, orden ascendente por fecha de publicacion
 .Testeo login_required en Foro
